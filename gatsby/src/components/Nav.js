@@ -60,7 +60,7 @@ export default function Nav() {
 		<NavStyles>
 			<ul>
 				<li>
-					<Link to="/">Hot Slices</Link>
+					<Link to="/">Hot Slices!</Link>
 				</li>
 				<li>
 					<Link to="/pizzas">Pizza Menu</Link>

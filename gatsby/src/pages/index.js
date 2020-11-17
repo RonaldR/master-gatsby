@@ -41,8 +41,6 @@ function HotSlices({ hotSlices }) {
 function HomePage() {
 	const { hotSlices, slicemasters } = useLatestData();
 
-	console.log({ hotSlices, slicemasters });
-
 	return (
 		<>
 			<SEO title="Home" />
