@@ -5,9 +5,14 @@ import styled from 'styled-components';
 
 const PizzaGridStyles = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	--minWidth: 300px
+	grid-template-columns: repeat(auto-fill, minmax(var(--minWidth), 1fr));
 	gap: 4rem;
 	grid-auto-rows: auto auto 500px;
+
+	@media (max-width: 500px) {
+		--minWidth: 100%;
+	}
 `;
 
 const PizzaStyles = styled.div`

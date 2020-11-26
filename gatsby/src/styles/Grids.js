@@ -3,7 +3,13 @@ import styled from 'styled-components';
 export const HomePageGrid = styled.section`
 	display: grid;
 	gap: 2rem;
-	grid-template-columns: repeat(2, minmax(auto, 1fr));
+
+	--columns: 2;
+	grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+
+	@media (max-width: 800px) {
+		--columns: 1;
+	}
 `;
 
 export const ItemsGrid = styled.section`
@@ -44,10 +50,15 @@ export const ItemStyles = styled.div`
 	}
 
 	p {
-		transform: rotate(-2deg) translateY(-140%);
+		transform: rotate(-2deg) translateY(-20px);
 		position: absolute;
 		width: 100%;
+		top: 0;
 		left: 0;
+		margin: 0;
+		font-size: 2rem; // fallback
+		// clamp: min, val, max
+		font-size: clamp(12px, 5vw, 20px);
 	}
 
 	.mark {
